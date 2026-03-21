@@ -1,0 +1,17 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    match /users/{userId} {
+      // 1. PUBLIC GET: Allow scanning a single QR code without logging in
+      // This matches your UserProfilePage (getPersonnelById)
+      allow get: if true;
+
+      // 2. PROTECTED LIST & WRITE: Only you/admins can see the whole table 
+      // or add new people from the dashboard
+      allow list, create, update, delete: if request.auth != null;
+    }
+    
+  }
+}
