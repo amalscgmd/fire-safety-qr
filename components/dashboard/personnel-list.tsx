@@ -69,7 +69,7 @@ export function PersonnelList() {
         if (exists) {
             setSelectedUsers(selectedUsers.filter(u => u.id !== person.id));
         } else {
-            if (selectedUsers.length >= 8) return;
+            if (selectedUsers.length >= 10) return;
             setSelectedUsers([...selectedUsers, person]);
         }
     };
@@ -93,10 +93,11 @@ export function PersonnelList() {
         const canvases = document.querySelectorAll("canvas");
 
         const positions = [
-            [20, 20], [110, 20],
-            [20, 80], [110, 80],
-            [20, 140], [110, 140],
-            [20, 200], [110, 200],
+            [20, 15], [110, 15],
+            [20, 65], [110, 65],
+            [20, 115], [110, 115],
+            [20, 165], [110, 165],
+            [20, 215], [110, 215],
         ];
 
         selectedUsers.forEach((user, i) => {
@@ -106,10 +107,10 @@ export function PersonnelList() {
             const img = canvas.toDataURL("image/png");
             const [x, y] = positions[i];
 
-            doc.addImage(img, "PNG", x, y, 60, 60);
+            doc.addImage(img, "PNG", x, y, 35, 35);
 
             doc.setFontSize(10);
-            doc.text(user.name, x + 30, y + 65, { align: "center" });
+            doc.text(user.name, x + 17.5, y + 40, { align: "center" });
         });
 
         doc.save("Bulk-QR.pdf");
@@ -244,7 +245,7 @@ export function PersonnelList() {
                         </DialogTitle>
                         <DialogDescription>
                             {isBulk
-                                ? "Download up to 8 QR codes"
+                                ? "Download up to 10 QR codes"
                                 : `QR for ${selectedUser?.name}`}
                         </DialogDescription>
                     </DialogHeader>

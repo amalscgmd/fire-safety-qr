@@ -65,7 +65,7 @@ export default async function UserProfilePage({ params }: { params: { id: string
 
                     <CardContent className="p-6 space-y-6">
                         {/* Project Details */}
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-3 gap-4">
                             <div className="space-y-1">
                                 <p className="text-xs text-slate-500 flex items-center gap-1">
                                     <Building2 className="h-3 w-3" /> COMPANY
@@ -77,6 +77,12 @@ export default async function UserProfilePage({ params }: { params: { id: string
                                     <Briefcase className="h-3 w-3" /> PROJECT
                                 </p>
                                 <p className="font-semibold text-slate-900">{person.project}</p>
+                            </div>
+                            <div className="space-y-1">
+                                <p className="text-xs text-slate-500 flex items-center gap-1">
+                                    <Briefcase className="h-3 w-3" /> ID
+                                </p>
+                                <p className="font-semibold text-slate-900">{person.manualId}</p>
                             </div>
                         </div>
 

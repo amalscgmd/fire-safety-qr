@@ -13,7 +13,7 @@ export default function DashboardPage() {
               Registration
             </h1>
             <p className="text-slate-500">
-              Create a new personnel record for the Aster Project.
+              Create a new personnel record for the Aster DM Health Capital Trivandrum.
             </p>
           </div>
 
